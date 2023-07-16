@@ -1,15 +1,15 @@
 package common;
 
-public class usuario {
+public class Usuario {
     private String vgnombredeusuario;
     private String vgpassword;
 
-    public usuario (){
+    public Usuario (){
         vgnombredeusuario = "";
         vgpassword = "";
         
     }
-    public usuario(String vpnombredeusuario,String vpasword) {
+    public Usuario(String vpnombredeusuario,String vpasword) {
         vgnombredeusuario = vpnombredeusuario;
         vgpassword = vpasword;
     }

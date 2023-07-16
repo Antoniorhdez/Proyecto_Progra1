@@ -1,22 +1,22 @@
-package buisnesLogic;
+package BusinessLogic;
 
-import Common.usuario;
+import common.Usuario;
 
 public class seguridad {
 
     
-    public usuario[] arreglousuarios = new usuario[5];
+    public Usuario[] arreglousuarios = new Usuario[5];
 
     public void registrodeusuarios() {
 
-        usuario usuarioadmin = new usuario();
+        Usuario usuarioadmin = new Usuario();
         usuarioadmin.setVgnombredeusuario("admin");
         usuarioadmin.setVgpassword("123");
 
-        usuario usuarioclienteoscar = new usuario("oscar","123");
-        usuario usuarioclientehillary = new usuario("hillary","123");
-        usuario usuarioclientemelvin = new usuario("melvin","123");
-        usuario usuarioclienteluis = new usuario("luis","123");
+        Usuario usuarioclienteoscar = new Usuario("Oscar","123");
+        Usuario usuarioclientehillary = new Usuario("Hillary","123");
+        Usuario usuarioclientemelvin = new Usuario("Melvin","123");
+        Usuario usuarioclienteluis = new Usuario("Luis","123");
        
 
         arreglousuarios[0] = usuarioadmin;
