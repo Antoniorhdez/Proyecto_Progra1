@@ -13,17 +13,17 @@ public class seguridad {
         usuarioadmin.setVgnombredeusuario("admin");
         usuarioadmin.setVgpassword("123");
 
-        Usuario usuarioclienteoscar = new Usuario("Oscar","123");
-        Usuario usuarioclientehillary = new Usuario("Hillary","123");
-        Usuario usuarioclientemelvin = new Usuario("Melvin","123");
-        Usuario usuarioclienteluis = new Usuario("Luis","123");
+        Usuario usuarioclienteOscar = new Usuario("Oscar","123");
+        Usuario usuarioclienteHillary = new Usuario("Hillary","123");
+        Usuario usuarioclienteMelvin = new Usuario("Melvin","123");
+        Usuario usuarioclienteLuis = new Usuario("Luis","123");
        
 
         arreglousuarios[0] = usuarioadmin;
-        arreglousuarios[1] = usuarioclienteoscar;
-        arreglousuarios[2] = usuarioclientehillary;
-        arreglousuarios[3] = usuarioclientemelvin;
-        arreglousuarios[4] = usuarioclienteluis;
+        arreglousuarios[1] = usuarioclienteOscar;
+        arreglousuarios[2] = usuarioclienteHillary;
+        arreglousuarios[3] = usuarioclienteMelvin;
+        arreglousuarios[4] = usuarioclienteLuis;
         
 
     }

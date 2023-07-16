@@ -1,14 +1,14 @@
-package Common;
+package common;
 
-public class Mesa {
+public class mesa {
     
 
-    /** definimos los atributos que salen para representarlos con variables */
+    
     public int vgNumeroDeMesa;
     public int vgCantidadDeSillas;
 
     /* Constrcutor */
-    public Mesa(){
+    public mesa(){
         vgNumeroDeMesa = 0;
         vgCantidadDeSillas = 0;
     }
