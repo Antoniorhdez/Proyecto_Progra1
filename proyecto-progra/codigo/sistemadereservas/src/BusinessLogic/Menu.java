@@ -11,7 +11,7 @@ public class Menu {
     } 
 
    
-    public void MostrarOpciones() { // Inicio
+    public void MostrarOpciones() { 
 
        
         Scanner entrada = new Scanner(System.in);
@@ -67,5 +67,96 @@ public class Menu {
         System.out.print("Hola");
     }
 
+    public void login() {
+
+        
+        Scanner entrada = new Scanner(System.in);
+
+        
+        String vlUsuario = "";
+        String vlClave = "";
+
+        System.out.println("Por favor ingrese sus credenciales");
+        System.out.println("Ingrese su usuario");
+        vlUsuario = entrada.next();
+        System.out.println("Por favor ingrese su contraseña");
+        vlClave = entrada.next();
+
+        Seguridad vlSeguridad = new Seguridad();
+
+        Boolean vlResultado = vlSeguridad.buscarPorUsuarioClave(vlUsuario, vlClave);
+
+        if (vlResultado) {
+            System.out.println("Bienvenido!");
+            MostrarOpciones();
+        } else {
+            System.out.println("Credenciales incorrectas!");
+
+        }
+
+        entrada.close();
+
+    }
+
+    public void inicializarMesas() {
+       
+        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
+            vgArregloDeMesas[indice] = new Mesa(indice + 1, 4);
+        }
+
+    }
+
+    
+    public void getMesasPorEstado(String vpEstado) {
+        System.out.println("Lista de mesas : " + vpEstado);
+
+        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
+            String vlEstado = vgArregloDeMesas[indice].getVgEstado();
+
+            if (vlEstado.equals(vpEstado)) {
+                System.out.println("Mesa #" + vgArregloDeMesas[indice].getVgNumeroDeMesa());
+            }
+        }
+    }
+
+    /**
+     * 
+     * @param vpCliente
+     * @param vpNumeroMesa
+     * @param vpFecha
+     * @param vpHora
+     */
+    public void reservarMesa(Cliente vpCliente, int vpNumeroMesa, String vpFecha, String vpHora) {
+
+        
+        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
+
+            
+
+            
+            Mesa vlMesaDelCiclo = vgArregloDeMesas[indice];
+           
+            String vlEstado = vlMesaDelCiclo.getVgEstado(); 
+            int vlNumeroMesa = vlMesaDelCiclo.getVgNumeroDeMesa(); 
+            
+
+            if (vlNumeroMesa == vpNumeroMesa  && vlEstado.equals(vgEstadoDisponible)) {
+
+                
+                System.out.println("La mesa #" + vpNumeroMesa + ", fue reservada de forma exitosa!");
+
+                
+                vgArregloDeMesas[indice].setVgEstado(vgEstadoReservada);
+                vgArregloDeMesas[indice].setVgCliente(vpCliente);
+                vgArregloDeMesas[indice].setFecha(vpFecha);
+                vgArregloDeMesas[indice].setHora(vpHora);
+
+                return;
+            }
+        }
+
+        
+        System.out.println("El numero de mesa: " + vpNumeroMesa + " no esta disponible!");
+    }
     
 }
