@@ -1,10 +1,10 @@
 package common;
 
-public class perfil {
+public class Perfil {
     public String vgnombre;
     public String vgidentificacion;
     
-    public perfil (){
+    public Perfil (){
         
         
     }

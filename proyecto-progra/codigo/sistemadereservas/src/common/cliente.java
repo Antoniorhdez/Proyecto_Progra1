@@ -1,16 +1,14 @@
 package common;
-
 import java.lang.reflect.Constructor;
 
-
-public class cliente {
+public class Cliente {
 
     
     private String vgNombre;
     private String vgApellido;
     private String vgIdentificacion;
     private String vgTelefono; 
-    public cliente(String vpNombre, String vpApellido, String vpIdentificacion, String vpTelefono) {
+    public Cliente(String vpNombre, String vpApellido, String vpIdentificacion, String vpTelefono) {
        
         vgNombre = vpNombre;
         vgApellido = vpApellido;
@@ -18,14 +16,14 @@ public class cliente {
         vgTelefono = vpTelefono;
     }
 
-    public cliente(){
+    public Cliente(){
         vgNombre = "";
         vgApellido = "";
         vgIdentificacion = "";
         vgTelefono = "";
     }
 
-    public cliente(String vpIdentificacion){
+    public Cliente(String vpIdentificacion){
         vgNombre = "";
         vgApellido = "";
         vgIdentificacion = vpIdentificacion;

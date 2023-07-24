@@ -1,43 +1,17 @@
 package common;
 
-public class mesa {
-    
+public class Mesa {
 
     
-    public int vgNumeroDeMesa;
-    public int vgCantidadDeSillas;
-
-    /* Constrcutor */
-    public mesa(){
-        vgNumeroDeMesa = 0;
-        vgCantidadDeSillas = 0;
-    }
-
-    public int getVgNumeroDeMesa() {
-        return vgNumeroDeMesa;
-    }
-
-    public void setVgNumeroDeMesa(int vgNumeroDeMesa) {
-        this.vgNumeroDeMesa = vgNumeroDeMesa;
-    }
-
-    public int getVgCantidadDeSillas() {
-        return vgCantidadDeSillas;
-    }
-
-    public void setVgCantidadDeSillas(int vgCantidadDeSillas) {
-        this.vgCantidadDeSillas = vgCantidadDeSillas;
-    }
     private int vgNumeroDeMesa;
     private int vgCantidadDeSillas;
     
     private String vgEstado;
     private Cliente vgCliente;
-    private String fecha; // dd/MM/yyy
-    private String hora; // hh:mm: ss
-    /* Constrcutor */
+    private String fecha; 
+    private String hora; 
+   
 
-    
     public Mesa() {
         vgNumeroDeMesa = 0;
         vgCantidadDeSillas = 0;
@@ -96,7 +70,4 @@ public class mesa {
     public void setHora(String hora) {
         this.hora = hora;
     }
-
-    
 }
-    

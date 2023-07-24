@@ -1,68 +1,84 @@
-package BusinessLogic;
+ package BusinessLogic;
 
 import java.util.Scanner;
-import common;
+import common.Cliente;
+import common.Mesa;
 
 public class Menu {
+ 
+    private Mesa[] vgArregloDeMesas = new Mesa[10];
+    final String vgEstadoDisponible = "Disponible";
+    final String vgEstadoReservada = "Reservada";
 
     
     public Menu() { 
-        MostrarOpciones();
+
+        inicializarMesas();
+
+        login();
     } 
+    
+    public void MostrarOpciones() {
 
-   
-    public void MostrarOpciones() { 
-
-       
+        
+        
         Scanner entrada = new Scanner(System.in);
 
        
         int opcion = 0;
 
-
-        do {
+        
+        do { 
 
             
             System.out.println("=== Menú ===");
-            System.out.println("1. Opción 1");
-            System.out.println("2. Opción 2");
-            System.out.println("3. Opción 3");
+            System.out.println("1. Consulta de mesas disponibles");
+            System.out.println("2. Reservar mesa");
+            System.out.println("3. Consulta de mesas reservadas");
             System.out.println("4. Salir");
             System.out.print("Elige una opción: ");
-
-        
             opcion = entrada.nextInt();
 
-
+           
+             
             switch (opcion) {
-                    Saludar();
-                    
+                case 1:
+                    getMesasPorEstado(vgEstadoDisponible);
                     break;
                 case 2:
-                    System.out.println("Has seleccionado la opción 2");
+                    
+                    Cliente vlCliente = new Cliente();
+                    vlCliente.setNombre("Luis");
+                    vlCliente.setApellido("Hernandez");
+                    vlCliente.setIdentificacion("202220222");
+                    vlCliente.setTelefono("6027-8904");
+                    int vlNumeroMesa = 3;
+                    String vlFecha = "17/08/2023";
+                    String vlHora = "1:00pm";
+
+                    reservarMesa(vlCliente, vlNumeroMesa, vlFecha, vlHora);
                     
                     break;
                 case 3:
-                    System.out.println("Has seleccionado la opción 3");
-                   
+                    getMesasPorEstado(vgEstadoReservada);
+
                     break;
                 case 4:
                     System.out.println("Saliendo del programa...");
                     break;
                 default:
-                    System.out.println("Opción inválida. Inténtalo de nuevo.");
+                    System.out.println("Opción erronea. vuelva a intentarlo.");
                     break;
             } 
-            System.out.println();
 
+            System.out.println(); 
         } 
 
-        
+       
         while (opcion != 4);
 
         entrada.close();
-    } 
-
+    }
     public void Saludar() {
         System.out.print("Hola");
     }
@@ -72,19 +88,18 @@ public class Menu {
         
         Scanner entrada = new Scanner(System.in);
 
-        
+       
         String vlUsuario = "";
         String vlClave = "";
 
-        System.out.println("Por favor ingrese sus credenciales");
+        System.out.println("ingrese sus credenciales");
         System.out.println("Ingrese su usuario");
         vlUsuario = entrada.next();
-        System.out.println("Por favor ingrese su contraseña");
+        System.out.println("ingrese su contraseña");
         vlClave = entrada.next();
 
         Seguridad vlSeguridad = new Seguridad();
-
-        Boolean vlResultado = vlSeguridad.buscarPorUsuarioClave(vlUsuario, vlClave);
+        Boolean vlResultado = vlSeguridad.buscarporusuarioclave(vlUsuario, vlClave);
 
         if (vlResultado) {
             System.out.println("Bienvenido!");
@@ -119,32 +134,26 @@ public class Menu {
         }
     }
 
-    /**
-     * 
-     * @param vpCliente
-     * @param vpNumeroMesa
-     * @param vpFecha
-     * @param vpHora
-     */
+    
     public void reservarMesa(Cliente vpCliente, int vpNumeroMesa, String vpFecha, String vpHora) {
 
-        
+       
         for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
 
-            
-
+           
             
             Mesa vlMesaDelCiclo = vgArregloDeMesas[indice];
            
             String vlEstado = vlMesaDelCiclo.getVgEstado(); 
             int vlNumeroMesa = vlMesaDelCiclo.getVgNumeroDeMesa(); 
             
-
+            
             if (vlNumeroMesa == vpNumeroMesa  && vlEstado.equals(vgEstadoDisponible)) {
 
                 
-                System.out.println("La mesa #" + vpNumeroMesa + ", fue reservada de forma exitosa!");
+                System.out.println("La mesa #" + vpNumeroMesa + ", fue reservadaad!");
 
+                
                 
                 vgArregloDeMesas[indice].setVgEstado(vgEstadoReservada);
                 vgArregloDeMesas[indice].setVgCliente(vpCliente);
@@ -155,8 +164,15 @@ public class Menu {
             }
         }
 
-        
+       
         System.out.println("El numero de mesa: " + vpNumeroMesa + " no esta disponible!");
     }
-    
+
+    public void busquedaReservaPorCliente(String vpIdentificacion){
+
+    }
+
+    public void cancelarReservaPorCliente(String vpIdentificacion){
+        
+    }
 }
