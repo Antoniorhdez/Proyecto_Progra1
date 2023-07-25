@@ -99,6 +99,7 @@ public class Menu {
         vlClave = entrada.next();
 
         Seguridad vlSeguridad = new Seguridad();
+        vlSeguridad.registrodeusuarios();
         Boolean vlResultado = vlSeguridad.buscarporusuarioclave(vlUsuario, vlClave);
 
         if (vlResultado) {
@@ -115,7 +116,7 @@ public class Menu {
 
     public void inicializarMesas() {
        
-        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
+        for (int indice = 0; vgArregloDeMesas.length -1> indice; indice++) {
             vgArregloDeMesas[indice] = new Mesa(indice + 1, 4);
         }
 
@@ -125,7 +126,7 @@ public class Menu {
     public void getMesasPorEstado(String vpEstado) {
         System.out.println("Lista de mesas : " + vpEstado);
 
-        for (int indice = 0; vgArregloDeMesas.length > indice; indice++) {
+        for (int indice = 0; vgArregloDeMesas.length-1 > indice; indice++) {
             String vlEstado = vgArregloDeMesas[indice].getVgEstado();
 
             if (vlEstado.equals(vpEstado)) {

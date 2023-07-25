@@ -29,7 +29,7 @@ public class Seguridad {
     }
 
     public boolean buscarporusuarioclave(String vpusuario, String vpclave) {
-        for (int indice = 0; indice < arreglousuarios.length; indice++) {
+        for (int indice = 0; indice <= arreglousuarios.length; indice++) {
             String vlusuarion = arreglousuarios[indice].getVgnombredeusuario();
             String vlclave = arreglousuarios[indice].getVgpassword();
             if (vlclave.equals(vpclave) && vlusuarion.equals(vpusuario))

@@ -1,29 +1,12 @@
 package common;
 
 public class Perfil {
-    public String vgnombre;
-    public String vgidentificacion;
     
-    public Perfil (){
-        
-        
-    }
+    public String vgNombre;
+    public String vgIdentificacion;
 
-    public String getVgnombre() {
-        return vgnombre;
+    public Perfil(){
+        vgNombre = "";
+        vgIdentificacion = "";
     }
-
-    public void setVgnombre(String vgnombre) {
-        this.vgnombre = vgnombre;
-    }
-
-    public String getVgidentificacion() {
-        return vgidentificacion;
-    }
-
-    public void setVgidentificacion(String vgidentificacion) {
-        this.vgidentificacion = vgidentificacion;
-    }
-    
 }
-
