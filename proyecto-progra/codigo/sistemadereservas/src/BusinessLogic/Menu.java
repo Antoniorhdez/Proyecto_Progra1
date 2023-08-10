@@ -98,7 +98,7 @@ public class Menu {
         System.out.println("ingrese su contraseña");
         vlClave = entrada.next();
 
-        Seguridad vlSeguridad = new Seguridad();
+        seguridad vlSeguridad = new seguridad();
         vlSeguridad.registrodeusuarios();
         Boolean vlResultado = vlSeguridad.buscarporusuarioclave(vlUsuario, vlClave);
 

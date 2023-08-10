@@ -2,7 +2,7 @@ package BusinessLogic;
 
 import common.Usuario;
 
-public class Seguridad {
+public class seguridad {
 
     
     public Usuario[] arreglousuarios = new Usuario[5];
